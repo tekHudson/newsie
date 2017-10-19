@@ -1,2 +1,16 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<p>Title bar</p>
+
+<h1>Welcome to West Coast Cigars</h1>
+
+<p>This is where we will put welcoming text</p>
+
+<p>dividing bar</p>
+
+<div class="all-articles">
+  <% @articles.each do |article| %>
+    <div>
+      <div><%= article.title %></div>
+      <div><%= article.text %></div>
+    </div>
+  <% end %>
+</div>
