@@ -1,4 +1,4 @@
-<p>Title bar</p>
+
 
 <h1>Welcome to West Coast Cigars</h1>
 
@@ -8,9 +8,18 @@
 
 <div class="all-articles">
   <% @articles.each do |article| %>
-    <div>
-      <div><%= article.title %></div>
-      <div><%= article.text %></div>
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading"><%= article.title %></h2>
+        <p class="lead"><%= article.text %></p>
+      </div>
+      <div class="col-md-5">
+        <img class="special"
+          data-src="holder.js/500x500?text=Example text&amp;theme=gray"
+          id="new" src="" />
+      </div>
     </div>
   <% end %>
 </div>
