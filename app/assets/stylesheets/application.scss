@@ -13,3 +13,12 @@
 
 /* Custom bootstrap variables must be set or imported *before* bootstrap. */
 @import "bootstrap";
+@import "west-cost-style";
+
+.container-fluid {
+  padding: 0;
+}
+
+.all-articles {
+  padding: 0 15px;
+}

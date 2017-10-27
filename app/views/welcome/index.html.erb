@@ -14,9 +14,6 @@
 
 <div class="all-articles">
   <% @articles.each_with_index do |article, n| %>
-    <hr class="featurette-divider">
-
     <%= render partial: "articles/row", locals: { article: article, shift_image_left: n%2 == 0 } %>
-
   <% end %>
 </div>
