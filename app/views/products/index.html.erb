@@ -1,0 +1,87 @@
+<div class="row">
+  <div class="col-md-2 col-sm-3 sidebar sidebar-left sidebar-animate sidebar-md-show">
+    <ul id="category_nav" class="nav flex-column">
+      <%= tab("All Products", products_path, @category.blank?,
+        html_options: { li: { class: "nav-item" }, a: { class: "nav-link" } }) %>
+
+      <% @categories.each do |category| %>
+        <%= tab(category.name, products_path(category_id: category.id), @category == category,
+          html_options: { li: { class: "nav-item" }, a: { class: "nav-link" } }) %>
+      <% end %>
+
+
+      <%= tab("Create Category", new_category_path, false,
+        html_options: { li: { class: "nav-item" }, a: { class: "nav-link" } }) %>
+    </ul>
+
+    <%# if current_user.can_view_and_edit_products? %>
+      <div class="top15">
+      </div>
+    <%# end %>
+  </div>
+
+  <div class="col-sm-9 col-md-10">
+    <% if @products.empty? && @category %>
+      <h4 class="button-height">
+        <%= @category.description %>
+        <%# if current_user.can_view_and_edit_products? %>
+          <%= link_to '', edit_category_path(@category), class: 'btn btn-default btn-xs glyphicon glyphicon-pencil' %>
+          <%= link_to "Create Product", new_product_path(category_id: @category.id), class: "btn btn-primary pull-right" %>
+        <%# end %>
+      </h4>
+
+      <hr />
+
+      <p class="text-danger">
+        There are no products in this category. To add an product, hit the "Create Product" button. If you want to delete this category, click the pencil button.
+      </p>
+    <% elsif @products.empty? %>
+      Product list is empty. Please select a category on the left and add an product.
+    <% else %>
+      <h4 class="button-height">
+        <% if @category.present? %>
+          <%= @category.description %>
+        <% else %>
+          All Products
+        <% end %>
+
+        <%# if current_user.can_view_and_edit_products? %>
+          <%= link_to '', edit_category_path(@category), class: 'btn btn-default btn-xs glyphicon glyphicon-pencil' if @category.present? %>
+          <%= link_to "Create Product", new_product_with_category_path, class: "btn btn-primary pull-right" %>
+        <%# end %>
+      </h4>
+
+      <table class="table table-dark table-hover table-striped data-table no-paging">
+        <thead>
+          <tr>
+            <th class="col-xs-4">Name</th>
+            <th class="text-center">Description</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @products.each do |item| %>
+            <tr data-toggle="tooltip" data-placement="left" title="<%= item.category.description %>">
+              <%# if current_user.can_view_and_edit_items? %>
+                <td class="col-xs-4">
+                  <span class="hidden"><%= item.category.name %></span>
+                  <%= item.name %>
+                </td>
+                <td class="">
+                  <%= item.description %>
+                </td>
+                <%#
+                <td class="text-center">
+                  <%= link_to '', edit_item_path(item.id), class: 'btn btn-default btn-xs glyphicon glyphicon-pencil', title: 'Edit Item' %>
+                <%#
+                  <%= link_to '', edit_stock_item_path(item.id), class: 'btn btn-default btn-xs glyphicon glyphicon-th-list', title: 'Edit Current Quantity' %>
+
+                </td>
+              <%# end %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
+</div>
