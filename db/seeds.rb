@@ -34,7 +34,7 @@ PRODUCTS = {
 }
 
 PRODUCTS[:categories].each do |category_name|
-  category = Category.create(name: category_name)
+  category = Category.create(name: category_name, description: PRODUCT_DESCRIPTIONS[rand(0...12)])
 
   PRODUCTS[category_name.downcase.gsub(' ', '_').to_sym].each do |product_name|
     Product.create(category: category, name: product_name, description: PRODUCT_DESCRIPTIONS[rand(0...12)])

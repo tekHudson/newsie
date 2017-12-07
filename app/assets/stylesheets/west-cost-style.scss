@@ -1,42 +1,45 @@
-@font-face {
-  font-family: "Go 2 Old Western";
-  src: fonts-url("Go 2 Old Western.otf") format("truetype");
+.card {
+  color: black;
 }
+// @font-face {
+//   font-family: "Go 2 Old Western";
+//   src: fonts-url("Go 2 Old Western.otf") format("truetype");
+// }
 
-body {
-  background-color: #222222 !important;
-}
+// body {
+//   background-color: #222222 !important;
+// }
 
-body > nav.navbar.sticky-top {
-  background-color: darkred !important;
-}
+// body > nav.navbar.sticky-top {
+//   background-color: darkred !important;
+// }
 
-.jumbotron {
-  color: white;
-  font-family: "Go 2 Old Western";
-  background: url("../images/body-background.jpg");
-  background-size: 200px 200px;
-}
+// .jumbotron {
+//   color: white;
+//   font-family: "Go 2 Old Western";
+//   background: url("../images/body-background.jpg");
+//   background-size: 200px 200px;
+// }
 
-.row.featurette.dark {
-  color: darkred;
-  background-color: darkgrey;
-}
+// .row.featurette.dark {
+//   color: darkred;
+//   background-color: darkgrey;
+// }
 
-.row.featurette {
-  padding: 15px 0px;
-  background-color: white;
-}
+// .row.featurette {
+//   padding: 15px 0px;
+//   background-color: white;
+// }
 
-.carousel .slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  height: 500px;
-  max-width: none;
-}
+// .carousel .slide {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   min-width: 100%;
+//   height: 500px;
+//   max-width: none;
+// }
 
-#category_nav > li.nav-item > a.nav-link {
-  color: rosybrown;
-}
+// #category_nav > li.nav-item > a.nav-link {
+//   color: rosybrown;
+// }

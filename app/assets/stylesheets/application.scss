@@ -11,9 +11,10 @@
  * It is generally better to create a new file per style scope.
  */
 
+@import "west-cost-style";
+
 /* Custom bootstrap variables must be set or imported *before* bootstrap. */
 @import "bootstrap";
-@import "west-cost-style";
 
 .container-fluid {
   padding: 0;
@@ -44,6 +45,10 @@
   margin-top:20px;
 }
 
+.top25 {
+  margin-top:25px;
+}
+
 .top30 {
   margin-top:30px;
 }
@@ -62,6 +67,10 @@
 
 .bottom20 {
   margin-bottom:20px;
+}
+
+.bottom25 {
+  margin-bottom:25px;
 }
 
 .bottom30 {
